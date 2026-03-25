@@ -825,8 +825,9 @@ void CBUSConfig::reboot(void) {
 
 // for Raspberry Pi Pico using arduino-pico core
 #ifdef ARDUINO_ARCH_RP2040
-  watchdog_enable(100, 1);      // set watchdog timeout to 100ms and allow to expire
-  while (1);
+  // watchdog_enable(100, 1);      // set watchdog timeout to 100ms and allow to expire
+  // while (1);
+  rp2040.reboot();
 #endif
 
 #if defined(ARDUINO_MINIMA) || defined(ARDUINO_UNOWIFIR4) || defined(ARDUINO_NANO_R4)
